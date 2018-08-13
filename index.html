@@ -8,7 +8,13 @@
   <meta name="description" content="Testing PWA">
   <meta name="author" content="David Thompson">
 
-  <script src="pwabuilder-sw-register.js"></script>
+  <script>
+    window.onerror = function(e) {
+      document.getElementById('errors').innerHTML += e.toString() + "<br/><br/>";
+    }
+    document.getElementById('errors').innerHTML = document.getElementById('errors').innerHTML + "testing";
+  </script>
+  
   <script>
     function playSound() {
       var snd = new Audio("siren.wav"); // buffers automatically when created
@@ -41,6 +47,9 @@
     
     <canvas id="canvas" width=320 height=240></canvas>
 
+    <div id="errors">
+      Errors...
+    </div>
 
     <small>1.1</small>
     <script>
@@ -65,6 +74,7 @@
         });
     </script>
 
+  <script src="pwabuilder-sw-register.js"></script>
   <script src="pwabuilder-sw.js?v=1"></script>
   <script>
     (function(){
