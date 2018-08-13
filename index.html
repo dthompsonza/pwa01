@@ -8,23 +8,37 @@
   <meta name="description" content="Testing PWA">
   <meta name="author" content="David Thompson">
 
+  <script src="pwabuilder-sw-register.js"></script>
   <script>
-    if (navigator.serviceWorker.controller) {
-      console.log('[PWA Builder] active service worker found, no need to register')
-    } else {
-      //Register the ServiceWorker
-      navigator.serviceWorker.register('pwabuider-sw.js', {
-        scope: './'
-      }).then(function(reg) {
-        console.log('Service worker has been registered for scope:'+ reg.scope);
-      });
+    function playSound() {
+      var snd = new Audio("siren.wav"); // buffers automatically when created
+      snd.play();
     }
+
+    function canVibrate() {
+      if ("vibrate" in navigator) {
+        return true;
+      }
+      return false;
+    }
+
+    function vibrate(timeMs) {
+      navigator.vibrate(timeMs);
+    }
+
   </script>
 </head>
 
 <body>
+  <h1>Testing PWA's</h1>
+
+    <button id="capture" style="height: 50px; width: 250px;" onclick="playSound();">Play Sound</button>
+    <button id="capture" style="height: 50px; width: 250px;" onclick="vibrate(250);" disabled="disabled" id="btnVibrate">Vibrate</button>
+    <button id="capture" style="height: 50px; width: 250px;">Capture Image</button>
+
+    <br/>
     <video id="player" controls autoplay></video>
-    <button id="capture">Capture</button>
+    
     <canvas id="canvas" width=320 height=240></canvas>
     <script>
       const player = document.getElementById('player');
@@ -48,17 +62,13 @@
         });
     </script>
 
-    <script>
-        self.addEventListener('install', function(event) {
-        var offlinePage = new Request('offline.html');
-        event.waitUntil(
-          fetch(offlinePage).then(function(response) {
-            return caches.open('pwabuilder-offline').then(function(cache) {
-              console.log('[PWA Builder] Cached offline page during Install'+ response.url);
-              return cache.put(offlinePage, response);
-            });
-        }));
-      });
-    </script>
+  <script src="pwabuilder-sw.js"></script>
+  <script>
+    (function(){
+      if (canVibrate()) {
+        document.getElementById('btnVibrate').disabled = false; 
+      }
+    })();
+  </script>
 </body>
 </html>
