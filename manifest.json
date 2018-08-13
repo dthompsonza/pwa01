@@ -1,0 +1,21 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Parcelninja PWA",
+    "scope": "/dthompsonza/pwa01/master/index.html",
+    "display": "fullscreen",
+    "start_url": "https://rawgit.com/dthompsonza/pwa01/master/index.html",
+    "short_name": "Parcelninja PWA",
+    "theme_color": "transparent",
+    "description": "Parcelninja Testing PWA",
+    "orientation": "portrait",
+    "background_color": "pick",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/favicon.ico",
+            "sizes": "16x16"
+        }
+    ]
+}
