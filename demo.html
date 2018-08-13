@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cordova-Research</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#cordova-research">Cordova Research</a></li>
+<li><a href="#pwa">PWA</a></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="cordova-research">Cordova Research</h1>
+<p>Apache Cordova allows you to write HTML, CSS &amp; Javascript files that can be hosted in an application container.</p>
+<p>I investigated a hosted app solution, which loads a remote web application into the container. This is the same as browsing to the site on the device.</p>
+<p>In order to access the device’s “features”, you need to:</p>
+<ol>
+<li>Pull cordova-specific javascript files into your hosted web application for the cordova project you are using</li>
+<li>Deploy and reference specific plugin modules for the functionality you want</li>
+</ol>
+<p>Plugins allow Cordova to access the devices hardware, and allows you to extend the application with:</p>
+<p><strong>Core Plugins</strong></p>
+<ul>
+<li>Battery status - events on level changes, battery low or critical</li>
+<li>Camera - take pictures or choose picture from gallery</li>
+<li>Device - information about device such as  model, version and serial numbers</li>
+<li>Dialogs - pop up device-specific dialog boxes for alerts or input</li>
+<li>File - allow user to upload a device file</li>
+<li>Geolocation</li>
+<li>Media - audio recording or playback</li>
+<li>Vibration - vibrate the device</li>
+</ul>
+<p><strong>Why use Cordova?</strong></p>
+<ul>
+<li>Allows you to access local hardware</li>
+<li>Lock user down to one app, one website</li>
+</ul>
+<p><strong>Why not to use Cordova?</strong></p>
+<ul>
+<li>Development can be “double-effort”</li>
+<li>Local hardware like vibrate or playing a sound can be handled by javascript already (depending on browser/device)</li>
+</ul>
+<h1 id="pwa">PWA</h1>
+<p>Progress Web Apps can replace Cordova</p>
+<p>Browser supported functionality <a href="https://whatwebcando.today/">checker</a></p>
+<p>See sample website with camera support <a href="**https://tinyurl.com/pnpwapp**">tinyurl.com/pnpwapp</a></p>
+
+    </div>
+  </div>
+</body>
+
+</html>
