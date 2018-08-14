@@ -63,7 +63,7 @@
     
     <canvas id="canvas" width=320 height=240></canvas>
 
-    <small>1.5</small>
+    <small>1.6</small>
     
     <script>
       const player = document.getElementById('player');
@@ -96,12 +96,18 @@
   <!-- DOM Loaded -->
   <script>
     (function(){ //on page load
-      document.getElementById('vibrate').disabled = canVibrate(); 
 
-      if (errorCount < 1) {
-        alertify.success("Page loaded OK");
-      } else {
-        alertify.warning("Page loaded with errors");
+      try {
+        document.getElementById('vibrate').disabled = canVibrate(); 
+
+        if (errorCount < 1) {
+          alertify.success("Page loaded OK");
+        } else {
+          alertify.warning("Page loaded with errors");
+        }
+      }
+      catch (e) {
+        handleError(e, "DOM Loaded")
       }
     })();
   </script>
