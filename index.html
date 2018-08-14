@@ -8,16 +8,21 @@
   <meta name="description" content="Testing PWA">
   <meta name="author" content="David Thompson">
 
+  <!-- Aletify.js -->
   <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/alertify.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/themes/default.min.css"/>
   
   <script>
     var errorCount = 0;
-    
-    function handleError(e) {
+
+    function handleError(e, section) {
       errorCount++;
-      alertify.error(e.message);
+      var msg = e.message;
+      if (section) {
+        msg = section + ' - ' + msg;
+      }
+      alertify.error(msg);
       console.log(e);
     }
 
@@ -58,7 +63,7 @@
     
     <canvas id="canvas" width=320 height=240></canvas>
 
-    <small>1.4</small>
+    <small>1.5</small>
     
     <script>
       const player = document.getElementById('player');
@@ -83,8 +88,11 @@
         .catch((e) => handleError(e));
     </script>
 
+  <!-- https://www.pwabuilder.com -->
   <script src="pwabuilder-sw-register.js"></script>
   <script src="pwabuilder-sw.js?v=1"></script>
+
+  <!-- DOM Loaded -->
   <script>
     (function(){ //on page load
       document.getElementById('vibrate').disabled = canVibrate(); 
