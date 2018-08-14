@@ -85,7 +85,7 @@
         .then((stream) => {
           player.srcObject = stream;
         })
-        .catch((e) => handleError(e));
+        .catch((e) => handleError(e, "Attach Video Stream Error"));
     </script>
 
   <!-- https://www.pwabuilder.com -->
