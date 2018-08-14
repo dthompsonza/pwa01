@@ -98,7 +98,7 @@
     (function(){ //on page load
 
       try {
-        document.getElementById('vibrate').disabled = canVibrate(); 
+        document.getElementById('vibrate').disabled = !canVibrate(); 
 
         if (errorCount < 1) {
           alertify.success("Page loaded OK");
