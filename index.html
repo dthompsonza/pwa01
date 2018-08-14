@@ -84,6 +84,7 @@
       navigator.mediaDevices.getUserMedia(constraints)
         .then((stream) => {
           player.srcObject = stream;
+          document.getElementById('photo').disabled = false; 
         })
         .catch((e) => handleError(e, "Attach Video Stream Error"));
     </script>
