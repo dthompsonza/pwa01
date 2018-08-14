@@ -8,12 +8,7 @@
   <meta name="description" content="Testing PWA">
   <meta name="author" content="David Thompson">
 
-  <script>
-    window.onerror = function(e) {
-      document.getElementById('errors').innerHTML += e.toString() + "<br/><br/>";
-    }
-    document.getElementById('errors').innerHTML = document.getElementById('errors').innerHTML + "testing";
-  </script>
+  
   
   <script>
     function playSound() {
@@ -51,7 +46,14 @@
       Errors...
     </div>
 
-    <small>1.1</small>
+    <small>1.3</small>
+    
+    <script>
+        window.onerror = function(e) {
+          document.getElementById('errors').innerHTML += e.toString() + "<br/><br/>";
+        }
+      </script>
+
     <script>
       const player = document.getElementById('player');
       const canvas = document.getElementById('canvas');
