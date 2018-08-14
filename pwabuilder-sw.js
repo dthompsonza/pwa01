@@ -9,7 +9,7 @@ self.addEventListener('install', function(event) {
         console.log('[PWA Builder] Cached offline page during Install'+ response.url);
         return cache.put(offlinePage, response);
       });
-  }));
+  }).catch((e) => handleError(e)));
 });
 
 //If any fetch fails, it will show the offline page.
@@ -30,5 +30,5 @@ self.addEventListener('refreshOffline', function(response) {
   return caches.open('pwabuilder-offline').then(function(cache) {
     console.log('[PWA Builder] Offline page updated from refreshOffline event: '+ response.url);
     return cache.put(offlinePage, response);
-  });
+  }).catch((e) => handleError(e));
 });
