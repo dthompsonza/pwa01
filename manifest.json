@@ -9,7 +9,7 @@
   "theme_color": "#7f4a89",
   "description": "Parcelninja Testing PWA",
   "orientation": "portrait",
-  "background_color": "pick",
+  "background_color": "#4286f4",
   "related_applications": [],
   "prefer_related_applications": false,
   "icons": [
